@@ -8,8 +8,9 @@ public class InfoPanel : MonoBehaviour
     [SerializeField] private List<InfoButton> m_InfoBuffer = new List<InfoButton>();
 
     // UI Components
-    
-    public Text ContentText;
+    public Image ContentImage;
+
+    [HideInInspector] public InfoButton CurrSelectedButton;
 
     public void Awake()
     {
@@ -26,7 +27,14 @@ public class InfoPanel : MonoBehaviour
         {
             m_InfoBuffer[i].transform.localScale = Vector3.one;
         }
+        CurrSelectedButton = button;
         button.transform.localScale = Vector3.one * 1.2f;
-        ContentText.text = button.InfoContent;
+        ContentImage.sprite = button.GetCurrSprite();
+        //AudioManager.Get().Play(button.InfoAudio);
+    }
+
+    public InfoButton GetCurrSelectedButton()
+    {
+        return CurrSelectedButton;
     }
 }
