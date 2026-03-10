@@ -20,10 +20,11 @@ public class InfoPanelController : MonoBehaviour
     public void OpenInfoPanel()
     {
         InfoPanelInstance.gameObject.SetActive(true);
+        InfoPanelInstance.SelectedInfoButton(InfoPanelInstance.GetCurrSelectedButton());
     }
 
     public void PlayAudio()
     {
-        AudioManager.Get().Play(InfoPanelInstance.GetCurrSelectedButton().InfoAudio);
+        AudioManager.Get().Play(InfoPanelInstance.GetCurrSelectedButton().GetCurrInfo().Clip);
     }
 }

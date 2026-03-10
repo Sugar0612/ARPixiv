@@ -26,9 +26,9 @@ public class AudioManager : MonoBehaviour
         MainSceneAudioSource.Play();
     }
 
-    public void Pause(AudioClip clip)
+    public void Pause()
     {
-        if (clip == null || MainSceneAudioSource == null) return;
+        if (MainSceneAudioSource == null) return;
 
         MainSceneAudioSource.Pause();
     }

@@ -8,13 +8,11 @@ public class InfoButton : MonoBehaviour
 {
     public Button SelfButton;
 
-    public List<Sprite> m_ImageBuffer = new List<Sprite>();
-
-    public AudioClip InfoAudio;
+    public List<InfoStruct> m_InfoBuffer = new List<InfoStruct>();
 
     public event Action<InfoButton> OnButtonClick;
 
-    private int imageIndex = 0;
+    private int infoIndex = 0;
 
     public void Start()
     {
@@ -24,28 +22,28 @@ public class InfoButton : MonoBehaviour
         });
     }
 
-    public void NextImage()
+    public void NextInfo()
     {
-        if (m_ImageBuffer == null || m_ImageBuffer.Count == 0)
+        if (m_InfoBuffer == null || m_InfoBuffer.Count == 0)
         {
-            imageIndex = 0;
+            infoIndex = 0;
             return;
         }
-        imageIndex = (imageIndex + 1) % m_ImageBuffer.Count;
+        infoIndex = (infoIndex + 1) % m_InfoBuffer.Count;
     }
 
-    public void PreviImage()
+    public void PreviInfo()
     {
-        if (m_ImageBuffer == null || m_ImageBuffer.Count == 0)
+        if (m_InfoBuffer == null || m_InfoBuffer.Count == 0)
         {
-            imageIndex = 0;
+            infoIndex = 0;
             return;
         }
-        imageIndex = (imageIndex - 1 + m_ImageBuffer.Count) % m_ImageBuffer.Count;
+        infoIndex = (infoIndex - 1 + m_InfoBuffer.Count) % m_InfoBuffer.Count;
     }
 
-    public Sprite GetCurrSprite()
+    public InfoStruct GetCurrInfo()
     {
-        return m_ImageBuffer[imageIndex];
+        return m_InfoBuffer[infoIndex];
     }
 }
