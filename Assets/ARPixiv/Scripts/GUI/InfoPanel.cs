@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -51,7 +52,10 @@ public class InfoPanel : MonoBehaviour
 
     public void ClickLeftButton()
     {
-        AudioManager.Get().Pause();
+        // 如果InfoButton中只存储了一张图片那么不需要然Audio暂停
+        Action audioAction = CurrSelectedButton.m_InfoBuffer.Count == 1 ? null : () => AudioManager.Get().Pause();
+        audioAction?.Invoke();
+
         CurrSelectedButton.PreviInfo();
 
         InfoStruct infoStruct = CurrSelectedButton.GetCurrInfo();
@@ -59,8 +63,10 @@ public class InfoPanel : MonoBehaviour
     }
 
     public void ClickRightButton()
-    {
-        AudioManager.Get().Pause();
+    { 
+        Action audioAction = CurrSelectedButton.m_InfoBuffer.Count == 1 ? null : () => AudioManager.Get().Pause();
+        audioAction?.Invoke();
+
         CurrSelectedButton.NextInfo();
 
         InfoStruct infoStruct = CurrSelectedButton.GetCurrInfo();
