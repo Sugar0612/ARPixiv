@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig>
+  <Tracking>
+    <ImageTarget name="MangZhong_XiaZhi" size="1.000000 0.561404" />
+    <ImageTarget name="LiXia_XiaoMan" size="1.000000 0.500000" />
+    <ImageTarget name="DaShu_XiaoShu" size="1.000000 0.506977" />
+    <ImageTarget name="LiQiu_ChuShu" size="1.000000 0.502326" />
+    <ImageTarget name="HanLu_ShuangJiang" size="1.000000 0.505796" />
+    <ImageTarget name="BaiLu_QiuFen" size="1.000000 0.561404" />
+    <ImageTarget name="XiaoXue_DaXue" size="1.000000 0.563232" />
+    <ImageTarget name="XiaoHan_DaHan" size="1.000000 0.510989" />
+    <ImageTarget name="LiDong_DongZhi" size="1.000000 0.563232" />
+    <ImageTarget name="QingMing_GuYu" size="1.000000 0.506977" />
+    <ImageTarget name="LiChun_YuShui" size="1.000000 0.560666" />
+    <ImageTarget name="JingZhe_ChunFen" size="1.000000 0.561404" />
+  </Tracking>
+</QCARConfig>
